@@ -13,7 +13,7 @@
       <img src="{{pokemon.img}}" class="pokemoncard-img" />
       <ion-card-header class="pokemoncard-detail">
         <ion-card-title>{{pokemon.name}}</ion-card-title>
-        <ion-card-subtitle>{{pokemon.type}}</ion-card-subtitle>
+        <ion-card-subtitle><div class="pokemoncard-type" [ngStyle]="{'background-color': changeTypeColor(pokemon.type)}">{{pokemon.type}}</div></ion-card-subtitle>
       </ion-card-header>
 
       <ion-card-content class="pokemoncard-stat">
