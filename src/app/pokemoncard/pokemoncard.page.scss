@@ -1,0 +1,22 @@
+.pokemoncard-detail {
+}
+
+.pokemoncard-card {
+    width: 45%;
+}
+
+.pokemoncard-img {
+    padding-left: 12%;
+    padding-top: 5%;
+    height: 100px;
+}
+
+.pokemon-stat {
+}
+
+#container {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    flex-direction: row !important;
+    justify-content: space-between;
+}

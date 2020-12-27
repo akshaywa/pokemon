@@ -1,5 +1,7 @@
 {
   "name": "pokemoncard",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular"
 }

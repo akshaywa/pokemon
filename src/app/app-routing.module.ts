@@ -4,12 +4,24 @@ import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'folder/Inbox',
+    redirectTo: 'cardsgame',
     pathMatch: 'full'
   },
   {
-    path: 'folder/:id',
-    loadChildren: () => import('./folder/folder.module').then( m => m.FolderPageModule)
+    path: 'pokemoncard',
+    loadChildren: () => import('./pokemoncard/pokemoncard.module').then( m => m.PokemoncardPageModule)
+  },
+  {
+    path: 'cardsgame',
+    loadChildren: () => import('./cardsgame/cardsgame.module').then( m => m.CardsgamePageModule)
+  },
+  {
+    path: 'pokemonstats',
+    loadChildren: () => import('./pokemonstats/pokemonstats.module').then( m => m.PokemonstatsPageModule)
+  },
+  {
+    path: 'trainerstats',
+    loadChildren: () => import('./trainerstats/trainerstats.module').then( m => m.TrainerstatsPageModule)
   }
 ];
 
