@@ -9,5 +9,15 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
+    <div class="cardgame-before">
+      <div class="cardgame-stack" *ngFor="let singleCard of cardStack">
+        <ion-card [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
+          <img src={{singleCard.srcImg}} class="cardgame-img" />
+        </ion-card>
+      </div>
+      <div class="box arrow-bottom">
+        Click to Distribute Cards
+      </div>
+    </div>
   </div>
 </ion-content>
