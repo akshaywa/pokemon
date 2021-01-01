@@ -1,7 +1,7 @@
-ion-card {
+.cardgame-cardbefore {
     position: absolute;
-    width: 60%;  
-    top: 115px;
+    width: 48%;  
+    top: 27%;
     left: 0;
     right: 0;
     margin: auto;
@@ -12,12 +12,13 @@ ion-card {
 }
 
 .box {
-    width: 160px;
-    height: 100px;
+    width: 46%;
+    height: 11%;
     background-color: #262626;
     color: #fff;
-    padding: 20px;
-    position: relative;
+    padding: 10px;
+    position: absolute;
+    top: 14%;
     border-radius: 5px;
     left: 0;
     right: 0;
@@ -33,9 +34,21 @@ ion-card {
     border-right: 15px solid transparent;
     border-left: 15px solid transparent;
 }
-  
-.cardgame-before {
-    position: relative;
+
+
+.cardgame-cardafteryou {
+    position: absolute;
+    width: 40%;  
+    top: 12%;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.cardgame-cardafterai {
+    position: absolute;
+    width: 40%;  
+    top: 62%;
     left: 0;
     right: 0;
     margin: auto;

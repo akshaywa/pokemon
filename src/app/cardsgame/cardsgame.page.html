@@ -9,14 +9,30 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <div class="cardgame-before">
-      <div class="cardgame-stack" *ngFor="let singleCard of cardStack">
-        <ion-card [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
-          <img src={{singleCard.srcImg}} class="cardgame-img" />
+    <div *ngIf="!startCardGame">
+      <div *ngFor="let singleCard of cardStack" (click)="startGame()">
+        <ion-card class="cardgame-cardbefore"
+          [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
+          <img src={{singleCard.srcImg}} />
         </ion-card>
       </div>
       <div class="box arrow-bottom">
         Click to Distribute Cards
+      </div>
+    </div>
+
+    <div *ngIf="startCardGame">
+      <div *ngFor="let singleCard of cardStack">
+        <ion-card class="cardgame-cardafteryou"
+          [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
+          <img src={{singleCard.srcImg}} />
+        </ion-card>
+      </div>
+      <div *ngFor="let singleCard of cardStack">
+        <ion-card class="cardgame-cardafterai"
+          [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
+          <img src={{singleCard.srcImg}} />
+        </ion-card>
       </div>
     </div>
   </div>

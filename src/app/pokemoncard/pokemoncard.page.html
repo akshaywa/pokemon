@@ -9,14 +9,14 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
-    <ion-card *ngFor="let pokemon of pokemonList" class="pokemoncard-card">
-      <img src="{{pokemon.img}}" class="pokemoncard-img" />
-      <div [ngStyle]="{'background-color': randomCardColor(pokemon.type)}">
+    <ion-card *ngFor="let pokemon of pokemonList">
+      <img src="{{pokemon.img}}" />
+      <div class="pokemoncard-card" [ngStyle]="{'background-color': randomCardColor(pokemon.type)}">
         <ion-card-header>
           <ion-card-title><strong>{{pokemon.name}}</strong></ion-card-title>
-          <ion-card-subtitle>
-            <div class="pokemoncard-type" [ngStyle]="{'background-color': changeTypeColor(pokemon.type)}"><strong>
-                {{pokemon.type}}</strong></div>
+          <ion-card-subtitle [ngStyle]="{'background-color': changeTypeColor(pokemon.type)}">
+            <strong>
+              {{pokemon.type}}</strong>
           </ion-card-subtitle>
         </ion-card-header>
 
