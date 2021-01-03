@@ -22,17 +22,75 @@
     </div>
 
     <div *ngIf="startCardGame">
-      <div *ngFor="let singleCard of cardStack">
-        <ion-card class="cardgame-cardafteryou"
+      <div class="boxtwo arrow-bottom">
+        Select Stats to Bet
+      </div>
+
+      <div *ngFor="let singleCard of cardYou">
+        <ion-card class="cardgame-cardafteryou" (click)="compareCard()"
           [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
-          <img src={{singleCard.srcImg}} />
+          <img class="cardgame-youimage" src={{singleCard.pokemon.img}} />
+          <div class="cardgame-card"
+            [ngStyle]="{'background-color': pokemonListService.randomCardColor(singleCard.pokemon.type)}">
+            <ion-card-header>
+              <ion-card-title><strong>{{singleCard.pokemon.name}}</strong></ion-card-title>
+              <ion-card-subtitle
+                [ngStyle]="{'background-color': pokemonListService.changeTypeColor(singleCard.pokemon.type)}">
+                <strong>
+                  {{singleCard.pokemon.type}}
+                </strong>
+              </ion-card-subtitle>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-row>
+                <ion-col><strong>Power:</strong>&ensp;{{singleCard.pokemon.power}}</ion-col>
+                <ion-col><strong>Attack:</strong>&ensp;{{singleCard.pokemon.attack}}</ion-col>
+              </ion-row>
+              <ion-row>
+                <ion-col><strong>Defence:</strong>&ensp;{{singleCard.pokemon.defence}}</ion-col>
+                <ion-col><strong>Speed:</strong>&ensp;{{singleCard.pokemon.speed}}</ion-col>
+              </ion-row>
+            </ion-card-content>
+          </div>
         </ion-card>
       </div>
+
+
       <div *ngFor="let singleCard of cardStack">
         <ion-card class="cardgame-cardafterai"
           [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
-          <img src={{singleCard.srcImg}} />
+          <img class="cardgame-aiimage" src={{singleCard.srcImg}} />
         </ion-card>
+      </div>
+
+      <div *ngIf="cardPresentAI">
+        <div *ngFor="let singleCard of cardStack">
+          <ion-card class="cardgame-cardafterai"
+            [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
+            <img class="cardgame-youimage" src={{cardAI.img}} />
+            <div class="cardgame-card"
+              [ngStyle]="{'background-color': pokemonListService.randomCardColor(cardAI.type)}">
+              <ion-card-header>
+                <ion-card-title><strong>{{cardAI.name}}</strong></ion-card-title>
+                <ion-card-subtitle [ngStyle]="{'background-color': pokemonListService.changeTypeColor(cardAI.type)}">
+                  <strong>
+                    {{cardAI.type}}
+                  </strong>
+                </ion-card-subtitle>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-row>
+                  <ion-col><strong>Power:</strong>&ensp;{{cardAI.power}}</ion-col>
+                  <ion-col><strong>Attack:</strong>&ensp;{{cardAI.attack}}</ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col><strong>Defence:</strong>&ensp;{{cardAI.defence}}</ion-col>
+                  <ion-col><strong>Speed:</strong>&ensp;{{cardAI.speed}}</ion-col>
+                </ion-row>
+              </ion-card-content>
+            </div>
+          </ion-card>
+        </div>
       </div>
     </div>
   </div>

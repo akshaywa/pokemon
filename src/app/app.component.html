@@ -6,8 +6,8 @@
         <ion-note>Ash Ketchum</ion-note>
 
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
-          <ion-item (click)="selectedIndex = i" routerDirection="root" [routerLink]="[p.url]" 
-          lines="none" detail="false" [class.selected]="selectedIndex == i">
+          <ion-item (click)="goToPage(i)"
+          lines="none" [ngClass]="(selectedIndex==i) ? 'selected' : ''">
             <ion-label>{{ p.title }}</ion-label>
           </ion-item>
         </ion-menu-toggle>

@@ -1,11 +1,12 @@
 ion-card {
-    width: 44%;
+    width: 44.3%;
+    transform: translate3d(2px, 5px, 5px);
 }
 
 img {
     display: block;
     margin: auto;
-    height: 114px;
+    height: 93px;
 }
 
 #container {
@@ -19,11 +20,11 @@ ion-card-subtitle {
     color: white !important;
     border: 1px solid black;
     border-radius: 2px;
-    padding: 2%;
 }
 
 ion-card-header {
     border-bottom: 1px solid black;
+    padding: 3%;
 }
 
 ion-card-content {    

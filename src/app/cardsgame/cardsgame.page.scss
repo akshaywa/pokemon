@@ -24,6 +24,19 @@
     right: 0;
     margin: auto;
 }
+
+.boxtwo {
+    z-index: 1;
+    width: 38%;
+    height: 11%;
+    background-color: #262626;
+    color: #fff;
+    padding: 10px;
+    position: absolute;
+    top: 14%;
+    left: 2%;
+    border-radius: 5px;
+}
   
 .box.arrow-bottom:after {
     content: " ";
@@ -35,21 +48,89 @@
     border-left: 15px solid transparent;
 }
 
+.boxtwo.arrow-bottom:after {    
+    content: " ";
+    position: absolute;
+    right: -15px;
+    top: 15px;
+    border-top: 15px solid transparent;
+    border-right: none;
+    border-left: 15px solid #262626;
+    border-bottom: 15px solid transparent;
+}
+
 
 .cardgame-cardafteryou {
     position: absolute;
-    width: 40%;  
-    top: 12%;
+    width: 45%;  
+    height: 38%;
+    top: 11%;
     left: 0;
     right: 0;
     margin: auto;
 }
 
 .cardgame-cardafterai {
-    position: absolute;
-    width: 40%;  
-    top: 62%;
+    position: absolute;    
+    width: 45%;  
+    height: 37%;
+    top: 59%;
     left: 0;
     right: 0;
     margin: auto;
+}
+
+.cardgame-cardwon {
+    position: absolute;    
+    width: 70%; 
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin: auto;    
+    text-align: center;    
+    font-size: 100%;
+}
+
+.cardgame-youimage {
+    display: block;
+    margin: auto;
+    height: 40%;
+}
+
+.cardgame-card {
+   border: 1px solid black;
+   height: 60%;
+}
+
+ion-card-title {
+    font-size: 90%;
+}
+
+ion-card-subtitle {
+    color: white !important;
+    border: 1px solid black;
+    border-radius: 2px;
+    font-size: 90%;
+}
+
+ion-card-header {
+    border-bottom: 1px solid black;
+    padding: 3% !important;
+    height: 35%;
+}
+
+ion-card-content {    
+    color: black;
+    height: 65%;
+    font-size: 90%;
+}
+
+.cardgame-aiimage {
+    width: 100%;
+    height: 100%;
+}
+
+.flip-card-inner {    
+  transition: transform 0.6s;
+  transform: rotateY(180deg);
 }
