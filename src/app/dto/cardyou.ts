@@ -1,8 +1,8 @@
 import { Pokemon } from "./pokemon";
 
 export class CardYou{
-    constructor(private pokemon: Pokemon,
-        private newVal: number,
+    constructor(public pokemon: Pokemon,
+        public newVal: number,
         ) {        
     }
 }

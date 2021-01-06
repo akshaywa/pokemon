@@ -1,11 +1,11 @@
 export class Pokemon{
-    constructor(private name: string,
-        private power: number,
-        private attack: number,
-        private defence: number,
-        private speed: number,
-        private type: string,
-        private img: string
+    constructor(public name: string,
+        public power: string,
+        public attack: string,
+        public defence: string,
+        public speed: string,
+        public type: string,
+        public img: string
         ) {        
     }
 }

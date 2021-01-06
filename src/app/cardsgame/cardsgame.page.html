@@ -13,7 +13,7 @@
       <div *ngFor="let singleCard of cardStack" (click)="startGame()">
         <ion-card class="cardgame-cardbefore"
           [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
-          <img src={{singleCard.srcImg}} />
+          <img src="assets/images/cardback.jpg" />
         </ion-card>
       </div>
       <div class="box arrow-bottom">
@@ -27,7 +27,7 @@
       </div>
 
       <div *ngFor="let singleCard of cardYou">
-        <ion-card class="cardgame-cardafteryou" (click)="compareCard()"
+        <ion-card class="cardgame-cardafteryou" 
           [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
           <img class="cardgame-youimage" src={{singleCard.pokemon.img}} />
           <div class="cardgame-card"
@@ -43,12 +43,12 @@
             </ion-card-header>
             <ion-card-content>
               <ion-row>
-                <ion-col><strong>Power:</strong>&ensp;{{singleCard.pokemon.power}}</ion-col>
-                <ion-col><strong>Attack:</strong>&ensp;{{singleCard.pokemon.attack}}</ion-col>
+                <ion-col (click)="compareCard('power')"><strong>Power:</strong>&ensp;{{singleCard.pokemon.power}}</ion-col>
+                <ion-col (click)="compareCard('attack')"><strong>Attack:</strong>&ensp;{{singleCard.pokemon.attack}}</ion-col>
               </ion-row>
               <ion-row>
-                <ion-col><strong>Defence:</strong>&ensp;{{singleCard.pokemon.defence}}</ion-col>
-                <ion-col><strong>Speed:</strong>&ensp;{{singleCard.pokemon.speed}}</ion-col>
+                <ion-col (click)="compareCard('defence')"><strong>Defence:</strong>&ensp;{{singleCard.pokemon.defence}}</ion-col>
+                <ion-col (click)="compareCard('speed')"><strong>Speed:</strong>&ensp;{{singleCard.pokemon.speed}}</ion-col>
               </ion-row>
             </ion-card-content>
           </div>
@@ -56,16 +56,16 @@
       </div>
 
 
-      <div *ngFor="let singleCard of cardStack">
-        <ion-card class="cardgame-cardafterai"
+      <div *ngIf="!cardPresentAI">
+        <ion-card  *ngFor="let singleCard of cardStack" class="cardgame-cardafterai"
           [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
-          <img class="cardgame-aiimage" src={{singleCard.srcImg}} />
+          <img class="cardgame-aiimage" src="assets/images/cardback.jpg" />
         </ion-card>
       </div>
 
       <div *ngIf="cardPresentAI">
-        <div *ngFor="let singleCard of cardStack">
-          <ion-card class="cardgame-cardafterai"
+        <div *ngFor="let singleCard of cardYou; let i = index">                    
+          <ion-card *ngIf="i==cardYou.length-1" class="cardgame-cardafterai"
             [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
             <img class="cardgame-youimage" src={{cardAI.img}} />
             <div class="cardgame-card"
@@ -90,6 +90,11 @@
               </ion-card-content>
             </div>
           </ion-card>
+
+          <ion-card *ngIf="i!=cardYou.length-1" class="cardgame-cardafterai"
+          [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
+          <img class="cardgame-aiimage" src="assets/images/cardback.jpg" />
+        </ion-card>
         </div>
       </div>
     </div>
