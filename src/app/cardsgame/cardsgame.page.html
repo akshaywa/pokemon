@@ -22,12 +22,29 @@
     </div>
 
     <div *ngIf="startCardGame">
-      <div class="boxtwo arrow-bottom">
+      <div *ngIf="yourScore==0 && aiScore==0" class="boxtwo arrow-bottom">
         Select Stats to Bet
       </div>
 
+      <div class="boxScore">
+        <table>
+          <tr>
+            <td>YOUR&ensp;</td>
+            <td>OPPONENT</td>
+          </tr>
+          <tr>
+            <td>SCORE&ensp;</td>
+            <td>SCORE</td>
+          </tr>
+          <tr>
+            <td>{{yourScore}}&ensp;</td>
+            <td>{{aiScore}}</td>
+          </tr>
+        </table>
+      </div>
+
       <div *ngFor="let singleCard of cardYou">
-        <ion-card class="cardgame-cardafteryou" 
+        <ion-card class="cardgame-cardafteryou"
           [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
           <img class="cardgame-youimage" src={{singleCard.pokemon.img}} />
           <div class="cardgame-card"
@@ -43,12 +60,16 @@
             </ion-card-header>
             <ion-card-content>
               <ion-row>
-                <ion-col (click)="compareCard('power')"><strong>Power:</strong>&ensp;{{singleCard.pokemon.power}}</ion-col>
-                <ion-col (click)="compareCard('attack')"><strong>Attack:</strong>&ensp;{{singleCard.pokemon.attack}}</ion-col>
+                <ion-col (click)="compareCard('power')"><strong>Power:</strong>&ensp;{{singleCard.pokemon.power}}
+                </ion-col>
+                <ion-col (click)="compareCard('attack')"><strong>Attack:</strong>&ensp;{{singleCard.pokemon.attack}}
+                </ion-col>
               </ion-row>
               <ion-row>
-                <ion-col (click)="compareCard('defence')"><strong>Defence:</strong>&ensp;{{singleCard.pokemon.defence}}</ion-col>
-                <ion-col (click)="compareCard('speed')"><strong>Speed:</strong>&ensp;{{singleCard.pokemon.speed}}</ion-col>
+                <ion-col (click)="compareCard('defence')"><strong>Defence:</strong>&ensp;{{singleCard.pokemon.defence}}
+                </ion-col>
+                <ion-col (click)="compareCard('speed')"><strong>Speed:</strong>&ensp;{{singleCard.pokemon.speed}}
+                </ion-col>
               </ion-row>
             </ion-card-content>
           </div>
@@ -57,14 +78,14 @@
 
 
       <div *ngIf="!cardPresentAI">
-        <ion-card  *ngFor="let singleCard of cardStack" class="cardgame-cardafterai"
+        <ion-card *ngFor="let singleCard of cardStack" class="cardgame-cardafterai"
           [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
           <img class="cardgame-aiimage" src="assets/images/cardback.jpg" />
         </ion-card>
       </div>
 
       <div *ngIf="cardPresentAI">
-        <div *ngFor="let singleCard of cardYou; let i = index">                    
+        <div *ngFor="let singleCard of cardYou; let i = index">
           <ion-card *ngIf="i==cardYou.length-1" class="cardgame-cardafterai"
             [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
             <img class="cardgame-youimage" src={{cardAI.img}} />
@@ -92,9 +113,9 @@
           </ion-card>
 
           <ion-card *ngIf="i!=cardYou.length-1" class="cardgame-cardafterai"
-          [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
-          <img class="cardgame-aiimage" src="assets/images/cardback.jpg" />
-        </ion-card>
+            [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
+            <img class="cardgame-aiimage" src="assets/images/cardback.jpg" />
+          </ion-card>
         </div>
       </div>
     </div>

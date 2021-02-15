@@ -7,7 +7,6 @@ declare var require: any
 })
 export class PokemonlistService {
   private pokemonList: Pokemon[];
-  private startCardGame: boolean;
 
   constructor() { }
 
@@ -25,14 +24,6 @@ export class PokemonlistService {
 
   getPokemonList(): Pokemon[] {
     return this.pokemonList;
-  }
-
-  setStartCardGame(startCardGame: boolean): void {
-    this.startCardGame = startCardGame;
-  }
-
-  getStartCardGame(): boolean {
-    return this.startCardGame;
   }
 
   changeTypeColor(type: string): string {

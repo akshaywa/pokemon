@@ -9,6 +9,7 @@
 
 #container {
     padding: 5px;
+    font-size: 88%;
 }
 
 .box {
@@ -33,7 +34,7 @@
     color: #fff;
     padding: 10px;
     position: absolute;
-    top: 14%;
+    top: 18.5%;
     left: 2%;
     border-radius: 5px;
 }
@@ -47,6 +48,17 @@
     border-right: 15px solid transparent;
     border-left: 15px solid transparent;
 }
+
+.boxScore {
+    z-index: 1;
+    background-color: #262626;
+    color: #fff;
+    padding: 10px;
+    position: absolute;
+    right: 2%;
+    border-radius: 5px;
+}
+  
 
 .boxtwo.arrow-bottom:after {    
     content: " ";
@@ -63,8 +75,8 @@
 .cardgame-cardafteryou {
     position: absolute;
     width: 45%;  
-    height: 38%;
-    top: 11%;
+    height: 37%;
+    top: 17%;
     left: 0;
     right: 0;
     margin: auto;
@@ -79,18 +91,7 @@
     right: 0;
     margin: auto;
 }
-
-.cardgame-cardwon {
-    position: absolute;    
-    width: 70%; 
-    top: 50%;
-    left: 0;
-    right: 0;
-    margin: auto;    
-    text-align: center;    
-    font-size: 100%;
-}
-
+ 
 .cardgame-youimage {
     display: block;
     margin: auto;
@@ -129,3 +130,4 @@ ion-card-content {
     width: 100%;
     height: 100%;
 }
+

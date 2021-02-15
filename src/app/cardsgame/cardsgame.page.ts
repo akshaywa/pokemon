@@ -21,18 +21,19 @@ export class CardsgamePage implements OnInit {
   newVal: number = 0;
   newValYou: number = 0;
 
-  startCardGame: boolean;
+  startCardGame: boolean = false;
   cardPresentAI: boolean;
   pokemonList: Pokemon[];
 
   yourSkill: number;
   aiSkill: number;
+  yourScore: number = 0;
+  aiScore: number = 0;
   whoWon: string = null;
 
   constructor(private pokemonListService: PokemonlistService,
     private alertController: AlertController) {
     this.createCardStack();
-    this.startCardGame = this.pokemonListService.getStartCardGame();
     this.createCardStackYou();
   }
 
@@ -49,7 +50,7 @@ export class CardsgamePage implements OnInit {
   }
 
   createCardStack(): void {
-    while (this.cardInStack < 10) {
+    while (this.cardInStack < 12) {
       this.cardStack.push(new CardStack("assets/images/cardback.jpg", this.newVal));
       this.cardInStack++;
       this.newVal = this.newVal + 2;
@@ -57,8 +58,10 @@ export class CardsgamePage implements OnInit {
   }
 
   async createCardStackYou() {
-    await this.initializePokemonList();
-    while (this.cardInYou < 10) {
+    if (!this.pokemonListService.getPokemonList()) {
+      await this.initializePokemonList();
+    }
+    while (this.cardInYou < 12) {
       let randomCard = this.pokemonList[Math.floor(Math.random() * this.pokemonList.length)];
       this.cardYou.push(new CardYou(randomCard, this.newValYou));
       this.cardInYou++;
@@ -68,22 +71,26 @@ export class CardsgamePage implements OnInit {
 
   startGame(): void {
     this.startCardGame = true;
-    this.pokemonListService.setStartCardGame(true);
   }
 
   async compareCard(skill: string) {
     this.cardStackAi();
-    this.skillCompare(skill);    
+    this.skillCompare(skill);
 
     await (await this.alertController.create({
+      cssClass: 'my-custom-class',
       header: this.whoWon,
       message: `<table>
       <tr>
-        <td>YOUR `+ skill.toUpperCase() + `</td>
-        <td>OPPONENT `+ skill.toUpperCase() + `</td>
+        <td>YOUR&ensp;&ensp;</td>
+        <td>OPPONENT</td>
       </tr>
       <tr>
-        <td>`+ this.yourSkill + `</td>
+        <td>`+ skill.toUpperCase() + `&ensp;&ensp;</td>
+        <td>`+ skill.toUpperCase() + `</td>
+      </tr>
+      <tr>
+        <td>`+ this.yourSkill + `&ensp;&ensp;</td>
         <td>`+ this.aiSkill + `</td>
       </tr>
     </table>`,
@@ -94,6 +101,9 @@ export class CardsgamePage implements OnInit {
             this.cardYou.splice((this.cardYou.length - 1), 1);
             this.cardPresentAI = false;
             this.whoWon = null;
+            if (this.cardYou.length == 0) {
+              this.askToPlayAgain();
+            }
           }
         }
       ],
@@ -121,14 +131,50 @@ export class CardsgamePage implements OnInit {
       this.yourSkill = parseInt(this.cardYou[this.cardYou.length - 1].pokemon.speed, 10);
       this.aiSkill = parseInt(this.cardAI.speed, 10);
     }
-    
+
 
     if (this.yourSkill > this.aiSkill) {
       this.whoWon = 'You Won';
+      this.yourScore++;
     } else if (this.yourSkill < this.aiSkill) {
       this.whoWon = 'Opponent Won';
+      this.aiScore++;
     } else {
       this.whoWon = 'Match Drawn';
+      this.yourScore++;
+      this.aiScore++;
     }
+  }
+
+  async askToPlayAgain() {
+    let whowon;
+    if (this.yourScore > this.aiScore) {
+      whowon = 'You Won the Round';
+    } else if (this.yourScore < this.aiScore) {
+      whowon = 'Opponent Won the Round';
+    } else {
+      whowon = 'Match Drawn for the Round';
+    }
+
+    const alert = await this.alertController.create({
+      header: whowon,
+      buttons: [
+        {
+          text: 'Start new game with new cards',
+          handler: () => {
+            this.cardInStack = 0;
+            this.cardInYou = 0;
+            this.newVal = 0;
+            this.newValYou = 0;
+            this.yourScore = 0;
+            this.aiScore = 0;
+            this.createCardStack();
+            this.createCardStackYou();
+          }
+        }
+      ],
+      backdropDismiss: false
+    });
+    await alert.present();
   }
 }
