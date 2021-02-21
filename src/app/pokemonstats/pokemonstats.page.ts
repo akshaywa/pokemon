@@ -78,7 +78,7 @@ export class PokemonstatsPage implements OnInit {
       data: {
         labels: this.nameList,
         datasets: [{
-          label: 'Power',
+          label: 'Attack',
           data: this.attackList,
           backgroundColor: 'rgba(0, 0, 0, 0)',
           borderColor: 'rgba(0, 128, 0, 1)',

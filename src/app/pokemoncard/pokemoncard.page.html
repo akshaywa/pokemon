@@ -10,7 +10,7 @@
 <ion-content [fullscreen]="true">
   <div id="container">
     <ion-card *ngFor="let pokemon of pokemonList">
-      <img src="{{pokemon.img}}" />
+      <img src="{{pokemon.img}}" (click)="getStats(pokemon)"/>
       <div class="pokemoncard-card" [ngStyle]="{'background-color': pokemonListService.randomCardColor(pokemon.type)}">
         <ion-card-header>
           <ion-card-title><strong>{{pokemon.name}}</strong></ion-card-title>

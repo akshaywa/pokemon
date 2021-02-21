@@ -25,6 +25,7 @@
     "@ionic/angular": "^5.0.0",
     "chart.js": "^2.9.4",
     "cordova-android": "9.0.0",
+    "cordova-ios": "6.2.0",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.3"
@@ -71,7 +72,8 @@
       "cordova-plugin-ionic-keyboard": {}
     },
     "platforms": [
-      "android"
+      "android",
+      "ios"
     ]
   }
 }
