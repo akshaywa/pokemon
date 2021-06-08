@@ -10,15 +10,6 @@
             "img": "assets/images/bulbasaur.jpg"
         },
         {
-            "name": "Venusaur",
-            "power": "80",
-            "attack": "82",
-            "defence": "83",
-            "speed": "80",
-            "type": "Grass/Poison",
-            "img": "assets/images/venusaur.jpg"
-        },
-        {
             "name": "Charmander",
             "power": "39",
             "attack": "52",
@@ -64,15 +55,6 @@
             "img": "assets/images/caterpie.jpg"
         },
         {
-            "name": "Metapod",
-            "power": "50",
-            "attack": "20",
-            "defence": "55",
-            "speed": "30",
-            "type": "Bug",
-            "img": "assets/images/metapod.jpg"
-        },
-        {
             "name": "Butterfree",
             "power": "60",
             "attack": "45",
@@ -80,24 +62,6 @@
             "speed": "70",
             "type": "Bug/Flying",
             "img": "assets/images/butterfree.jpg"
-        },
-        {
-            "name": "Weedle",
-            "power": "40",
-            "attack": "35",
-            "defence": "30",
-            "speed": "50",
-            "type": "Bug/Poison",
-            "img": "assets/images/weedle.jpg"
-        },
-        {
-            "name": "Beedrill",
-            "power": "65",
-            "attack": "90",
-            "defence": "40",
-            "speed": "75",
-            "type": "Bug/Poison",
-            "img": "assets/images/beedrill.jpg"
         },
         {
             "name": "Pidgey",
@@ -145,15 +109,6 @@
             "img": "assets/images/spearow.jpg"
         },
         {
-            "name": "Fearow",
-            "power": "65",
-            "attack": "90",
-            "defence": "65",
-            "speed": "100",
-            "type": "Normal/Flying",
-            "img": "assets/images/fearow.jpg"
-        },
-        {
             "name": "Arbok",
             "power": "60",
             "attack": "95",
@@ -181,42 +136,6 @@
             "img": "assets/images/raichu.jpg"
         },
         {
-            "name": "Sandshrew",
-            "power": "50",
-            "attack": "75",
-            "defence": "85",
-            "speed": "40",
-            "type": "Ground",
-            "img": "assets/images/sandshrew.jpg"
-        },
-        {
-            "name": "Sandslash",
-            "power": "75",
-            "attack": "100",
-            "defence": "110",
-            "speed": "65",
-            "type": "Ground",
-            "img": "assets/images/sandslash.jpg"
-        },
-        {
-            "name": "Nidoqueen",
-            "power": "90",
-            "attack": "92",
-            "defence": "87",
-            "speed": "76",
-            "type": "Ground/Poison",
-            "img": "assets/images/nidoqueen.jpg"
-        },
-        {
-            "name": "Nidoking",
-            "power": "81",
-            "attack": "102",
-            "defence": "77",
-            "speed": "85",
-            "type": "Ground/Poison",
-            "img": "assets/images/nidoking.jpg"
-        },
-        {
             "name": "Clefairy",
             "power": "70",
             "attack": "45",
@@ -224,15 +143,6 @@
             "speed": "35",
             "type": "Fairy",
             "img": "assets/images/clefairy.jpg"
-        },
-        {
-            "name": "Clefable",
-            "power": "95",
-            "attack": "70",
-            "defence": "73",
-            "speed": "60",
-            "type": "Fairy",
-            "img": "assets/images/clefable.jpg"
         },
         {
             "name": "Vulpix",
@@ -244,15 +154,6 @@
             "img": "assets/images/vulpix.jpg"
         },
         {
-            "name": "Ninetales",
-            "power": "73",
-            "attack": "76",
-            "defence": "75",
-            "speed": "100",
-            "type": "Fire",
-            "img": "assets/images/ninetales.jpg"
-        },
-        {
             "name": "Jigglypuff",
             "power": "115",
             "attack": "45",
@@ -260,33 +161,6 @@
             "speed": "20",
             "type": "Normal/Fairy",
             "img": "assets/images/jigglypuff.jpg"
-        },
-        {
-            "name": "Wigglytuff",
-            "power": "140",
-            "attack": "70",
-            "defence": "45",
-            "speed": "45",
-            "type": "Normal/Fairy",
-            "img": "assets/images/wigglytuff.jpg"
-        },
-        {
-            "name": "Zubat",
-            "power": "75",
-            "attack": "70",
-            "defence": "80",
-            "speed": "90",
-            "type": "Flying/Poison",
-            "img": "assets/images/zubat.jpg"
-        },
-        {
-            "name": "Oddish",
-            "power": "45",
-            "attack": "50",
-            "defence": "55",
-            "speed": "30",
-            "type": "Grass/Poison",
-            "img": "assets/images/oddish.jpg"
         },
         {
             "name": "Gloom",
@@ -307,42 +181,6 @@
             "img": "assets/images/paras.jpg"
         },
         {
-            "name": "Parasect",
-            "power": "60",
-            "attack": "95",
-            "defence": "80",
-            "speed": "30",
-            "type": "Bug/Grass",
-            "img": "assets/images/parasect.jpg"
-        },
-        {
-            "name": "Venonat",
-            "power": "60",
-            "attack": "55",
-            "defence": "50",
-            "speed": "45",
-            "type": "Bug/Poison",
-            "img": "assets/images/venonat.jpg"
-        },
-        {
-            "name": "Venomoth",
-            "power": "70",
-            "attack": "65",
-            "defence": "60",
-            "speed": "90",
-            "type": "Bug/Poison",
-            "img": "assets/images/venomoth.jpg"
-        },
-        {
-            "name": "Diglett",
-            "power": "10",
-            "attack": "55",
-            "defence": "25",
-            "speed": "95",
-            "type": "Ground",
-            "img": "assets/images/diglett.jpg"
-        },
-        {
             "name": "Dugtrio",
             "power": "35",
             "attack": "100",
@@ -361,15 +199,6 @@
             "img": "assets/images/meowth.jpg"
         },
         {
-            "name": "Persian",
-            "power": "65",
-            "attack": "60",
-            "defence": "70",
-            "speed": "115",
-            "type": "Normal",
-            "img": "assets/images/persian.jpg"
-        },
-        {
             "name": "Psyduck",
             "power": "50",
             "attack": "52",
@@ -377,33 +206,6 @@
             "speed": "55",
             "type": "Water",
             "img": "assets/images/psyduck.jpg"
-        },
-        {
-            "name": "Golduck",
-            "power": "80",
-            "attack": "82",
-            "defence": "78",
-            "speed": "85",
-            "type": "Water",
-            "img": "assets/images/golduck.jpg"
-        },
-        {
-            "name": "Mankey",
-            "power": "40",
-            "attack": "80",
-            "defence": "35",
-            "speed": "70",
-            "type": "Fighting",
-            "img": "assets/images/mankey.jpg"
-        },
-        {
-            "name": "Primeape",
-            "power": "65",
-            "attack": "105",
-            "defence": "60",
-            "speed": "95",
-            "type": "Fighting",
-            "img": "assets/images/primeape.jpg"
         },
         {
             "name": "Growlithe",
@@ -415,15 +217,6 @@
             "img": "assets/images/growlithe.jpg"
         },
         {
-            "name": "Arcanine",
-            "power": "90",
-            "attack": "110",
-            "defence": "80",
-            "speed": "95",
-            "type": "Fire",
-            "img": "assets/images/arcanine.jpg"
-        },
-        {
             "name": "Poliwag",
             "power": "40",
             "attack": "50",
@@ -431,15 +224,6 @@
             "speed": "90",
             "type": "Water",
             "img": "assets/images/poliwag.jpg"
-        },
-        {
-            "name": "Poliwhirl",
-            "power": "65",
-            "attack": "65",
-            "defence": "65",
-            "speed": "90",
-            "type": "Water",
-            "img": "assets/images/poliwhirl.jpg"
         },
         {
             "name": "Abra",
@@ -460,33 +244,6 @@
             "img": "assets/images/kadabra.jpg"
         },
         {
-            "name": "Alakazam",
-            "power": "55",
-            "attack": "50",
-            "defence": "45",
-            "speed": "120",
-            "type": "Psychic",
-            "img": "assets/images/alakazam.jpg"
-        },
-        {
-            "name": "Machoke",
-            "power": "80",
-            "attack": "100",
-            "defence": "70",
-            "speed": "45",
-            "type": "Fighting",
-            "img": "assets/images/machoke.jpg"
-        },
-        {
-            "name": "Machamp",
-            "power": "90",
-            "attack": "130",
-            "defence": "80",
-            "speed": "55",
-            "type": "Fighting",
-            "img": "assets/images/machamp.jpg"
-        },
-        {
             "name": "Bellsprout",
             "power": "50",
             "attack": "75",
@@ -494,15 +251,6 @@
             "speed": "40",
             "type": "Grass/Poison",
             "img": "assets/images/bellsprout.jpg"
-        },
-        {
-            "name": "Weepinbell",
-            "power": "65",
-            "attack": "90",
-            "defence": "50",
-            "speed": "55",
-            "type": "Grass/Poison",
-            "img": "assets/images/weepinbell.jpg"
         },
         {
             "name": "Victreebel",
@@ -514,24 +262,6 @@
             "img": "assets/images/victreebel.jpg"
         },
         {
-            "name": "Tentacool",
-            "power": "40",
-            "attack": "40",
-            "defence": "35",
-            "speed": "70",
-            "type": "Water/Poison",
-            "img": "assets/images/tentacool.jpg"
-        },
-        {
-            "name": "Tentacruel",
-            "power": "80",
-            "attack": "70",
-            "defence": "65",
-            "speed": "100",
-            "type": "Water/Poison",
-            "img": "assets/images/tentacruel.jpg"
-        },
-        {
             "name": "Geodude",
             "power": "40",
             "attack": "80",
@@ -539,15 +269,6 @@
             "speed": "20",
             "type": "Rock/Ground",
             "img": "assets/images/geodude.jpg"
-        },
-        {
-            "name": "Golem",
-            "power": "80",
-            "attack": "120",
-            "defence": "130",
-            "speed": "45",
-            "type": "Rock/Ground",
-            "img": "assets/images/golem.jpg"
         },
         {
             "name": "Rapidash",
@@ -577,78 +298,6 @@
             "img": "assets/images/slowpoke.jpg"
         },
         {
-            "name": "Slowbro",
-            "power": "95",
-            "attack": "75",
-            "defence": "110",
-            "speed": "30",
-            "type": "Water/Psychic",
-            "img": "assets/images/slowbro.jpg"
-        },
-        {
-            "name": "Magnemite",
-            "power": "25",
-            "attack": "35",
-            "defence": "70",
-            "speed": "45",
-            "type": "Steel/Electric",
-            "img": "assets/images/magnemite.jpg"
-        },
-        {
-            "name": "Magneton",
-            "power": "50",
-            "attack": "60",
-            "defence": "95",
-            "speed": "70",
-            "type": "Steel/Electric",
-            "img": "assets/images/magneton.jpg"
-        },
-        {
-            "name": "Doduo",
-            "power": "35",
-            "attack": "85",
-            "defence": "45",
-            "speed": "75",
-            "type": "Normal/Flying",
-            "img": "assets/images/doduo.jpg"
-        },
-        {
-            "name": "Dodrio",
-            "power": "60",
-            "attack": "110",
-            "defence": "70",
-            "speed": "110",
-            "type": "Normal/Flying",
-            "img": "assets/images/dodrio.jpg"
-        },
-        {
-            "name": "Cloyster",
-            "power": "50",
-            "attack": "95",
-            "defence": "180",
-            "speed": "70",
-            "type": "Water/Ice",
-            "img": "assets/images/cloyster.jpg"
-        },
-        {
-            "name": "Gastly",
-            "power": "30",
-            "attack": "35",
-            "defence": "30",
-            "speed": "80",
-            "type": "Ghost/Poison",
-            "img": "assets/images/gastly.jpg"
-        },
-        {
-            "name": "Haunter",
-            "power": "45",
-            "attack": "50",
-            "defence": "45",
-            "speed": "95",
-            "type": "Ghost/Poison",
-            "img": "assets/images/haunter.jpg"
-        },
-        {
             "name": "Gengar",
             "power": "60",
             "attack": "65",
@@ -674,15 +323,6 @@
             "speed": "42",
             "type": "Psychic",
             "img": "assets/images/drowzee.jpg"
-        },
-        {
-            "name": "Hypno",
-            "power": "85",
-            "attack": "83",
-            "defence": "70",
-            "speed": "67",
-            "type": "Psychic",
-            "img": "assets/images/hypno.jpg"
         },
         {
             "name": "Krabby",
@@ -712,15 +352,6 @@
             "img": "assets/images/voltorb.jpg"
         },
         {
-            "name": "Electrode",
-            "power": "60",
-            "attack": "50",
-            "defence": "70",
-            "speed": "150",
-            "type": "Electric",
-            "img": "assets/images/electrode.jpg"
-        },
-        {
             "name": "Exeggutor",
             "power": "95",
             "attack": "95",
@@ -739,24 +370,6 @@
             "img": "assets/images/marowak.jpg"
         },
         {
-            "name": "Hitmonlee",
-            "power": "50",
-            "attack": "120",
-            "defence": "53",
-            "speed": "87",
-            "type": "Fighting",
-            "img": "assets/images/hitmonlee.jpg"
-        },
-        {
-            "name": "Hitmonchan",
-            "power": "50",
-            "attack": "105",
-            "defence": "79",
-            "speed": "76",
-            "type": "Fighting",
-            "img": "assets/images/hitmonchan.jpg"
-        },
-        {
             "name": "Lickitung",
             "power": "90",
             "attack": "55",
@@ -766,15 +379,6 @@
             "img": "assets/images/lickitung.jpg"
         },
         {
-            "name": "Koffing",
-            "power": "40",
-            "attack": "65",
-            "defence": "95",
-            "speed": "35",
-            "type": "Poison",
-            "img": "assets/images/koffing.jpg"
-        },
-        {
             "name": "Weezing",
             "power": "65",
             "attack": "90",
@@ -782,15 +386,6 @@
             "speed": "60",
             "type": "Poison",
             "img": "assets/images/weezing.jpg"
-        },
-        {
-            "name": "Rhydon",
-            "power": "105",
-            "attack": "130",
-            "defence": "120",
-            "speed": "40",
-            "type": "Ground/Rock",
-            "img": "assets/images/rhydon.jpg"
         },
         {
             "name": "Chansey",
@@ -809,15 +404,6 @@
             "speed": "63",
             "type": "Water",
             "img": "assets/images/goldeen.jpg"
-        },
-        {
-            "name": "Seaking",
-            "power": "80",
-            "attack": "92",
-            "defence": "65",
-            "speed": "68",
-            "type": "Water",
-            "img": "assets/images/seaking.jpg"
         },
         {
             "name": "Staryu",
@@ -874,24 +460,6 @@
             "img": "assets/images/magmar.jpg"
         },
         {
-            "name": "Pinsir",
-            "power": "65",
-            "attack": "125",
-            "defence": "100",
-            "speed": "85",
-            "type": "Bug/Flying",
-            "img": "assets/images/pinsir.jpg"
-        },
-        {
-            "name": "Tauros",
-            "power": "75",
-            "attack": "100",
-            "defence": "95",
-            "speed": "110",
-            "type": "Normal",
-            "img": "assets/images/tauros.jpg"
-        },
-        {
             "name": "Magikarp",
             "power": "20",
             "attack": "10",
@@ -910,42 +478,6 @@
             "img": "assets/images/gyarados.jpg"
         },
         {
-            "name": "Lapras",
-            "power": "130",
-            "attack": "85",
-            "defence": "80",
-            "speed": "60",
-            "type": "Water/Ice",
-            "img": "assets/images/lapras.jpg"
-        },
-        {
-            "name": "Ditto",
-            "power": "48",
-            "attack": "48",
-            "defence": "48",
-            "speed": "48",
-            "type": "Normal",
-            "img": "assets/images/ditto.jpg"
-        },
-        {
-            "name": "Vaporeon",
-            "power": "130",
-            "attack": "65",
-            "defence": "60",
-            "speed": "65",
-            "type": "Water",
-            "img": "assets/images/vaporeon.jpg"
-        },
-        {
-            "name": "Jolteon",
-            "power": "65",
-            "attack": "65",
-            "defence": "60",
-            "speed": "130",
-            "type": "Electric",
-            "img": "assets/images/jolteon.jpg"
-        },
-        {
             "name": "Flareon",
             "power": "65",
             "attack": "130",
@@ -962,24 +494,6 @@
             "speed": "30",
             "type": "Normal",
             "img": "assets/images/snorlax.jpg"
-        },
-        {
-            "name": "Zapdos",
-            "power": "90",
-            "attack": "90",
-            "defence": "85",
-            "speed": "100",
-            "type": "Electric",
-            "img": "assets/images/zapdos.jpg"
-        },
-        {
-            "name": "Dragonair",
-            "power": "61",
-            "attack": "84",
-            "defence": "65",
-            "speed": "70",
-            "type": "Dragon",
-            "img": "assets/images/dragonair.jpg"
         },
         {
             "name": "Dragonite",
@@ -1018,24 +532,6 @@
             "img": "assets/images/bayleef.jpg"
         },
         {
-            "name": "Cyndaquil",
-            "power": "39",
-            "attack": "52",
-            "defence": "43",
-            "speed": "65",
-            "type": "Fire",
-            "img": "assets/images/cyndaquil.jpg"
-        },
-        {
-            "name": "Quilava",
-            "power": "58",
-            "attack": "64",
-            "defence": "58",
-            "speed": "80",
-            "type": "Fire",
-            "img": "assets/images/quilava.jpg"
-        },
-        {
             "name": "Totodile",
             "power": "50",
             "attack": "65",
@@ -1054,15 +550,6 @@
             "img": "assets/images/hoothoot.jpg"
         },
         {
-            "name": "Noctowl",
-            "power": "100",
-            "attack": "50",
-            "defence": "50",
-            "speed": "70",
-            "type": "Normal/Flying",
-            "img": "assets/images/noctowl.jpg"
-        },
-        {
             "name": "bellossom",
             "power": "75",
             "attack": "80",
@@ -1070,24 +557,6 @@
             "speed": "50",
             "type": "Grass",
             "img": "assets/images/bellossom.jpg"
-        },
-        {
-            "name": "sudowoodo",
-            "power": "70",
-            "attack": "100",
-            "defence": "115",
-            "speed": "30",
-            "type": "Rock",
-            "img": "assets/images/sudowoodo.jpg"
-        },
-        {
-            "name": "sunflora",
-            "power": "75",
-            "attack": "75",
-            "defence": "55",
-            "speed": "30",
-            "type": "Grass",
-            "img": "assets/images/sunflora.jpg"
         },
         {
             "name": "wobbuffet",

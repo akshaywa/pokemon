@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { BehaviorSubject } from 'rxjs';
 import { Pokemon } from './dto/pokemon';
 declare var require: any 
 
@@ -6,9 +7,9 @@ declare var require: any
   providedIn: 'root'
 })
 export class PokemonlistService {
-  private pokemonList: Pokemon[];
+  public content = new BehaviorSubject<Pokemon[]>([]);
 
-  constructor() { }
+  constructor() {}
 
   public getPokemonListFromApi(): Promise<Pokemon[]> {
     return new Promise((resolve) => {
@@ -18,13 +19,6 @@ export class PokemonlistService {
     })
   }
 
-  setPokemonList(pokemonList: Pokemon[]): void {
-    this.pokemonList = pokemonList;
-  }
-
-  getPokemonList(): Pokemon[] {
-    return this.pokemonList;
-  }
 
   changeTypeColor(type: string): string {
     if (type.includes("Grass")) {

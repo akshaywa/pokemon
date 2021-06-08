@@ -20,10 +20,6 @@ export class AppComponent implements OnInit {
     {
       title: 'Pokemon Cards',
       url: '/pokemoncard'
-    },
-    {
-      title: 'Pokemon Stats',
-      url: '/pokemonstats'
     },    
     {
       title: 'Trainer Stats',

@@ -43,7 +43,7 @@ export class CardsgamePage implements OnInit {
   async initializePokemonList() {
     await this.pokemonListService.getPokemonListFromApi().then((pokemonList: Pokemon[]) => {
       this.pokemonList = pokemonList;
-      this.pokemonListService.setPokemonList(this.pokemonList);
+      this.pokemonListService.content.next(this.pokemonList);
     }).catch(() => {
       console.log("json not fetched");
     });
@@ -58,9 +58,7 @@ export class CardsgamePage implements OnInit {
   }
 
   async createCardStackYou() {
-    if (!this.pokemonListService.getPokemonList()) {
       await this.initializePokemonList();
-    }
     while (this.cardInYou < 12) {
       let randomCard = this.pokemonList[Math.floor(Math.random() * this.pokemonList.length)];
       this.cardYou.push(new CardYou(randomCard, this.newValYou));

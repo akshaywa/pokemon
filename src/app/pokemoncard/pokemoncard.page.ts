@@ -10,15 +10,17 @@ import { PokemonlistService } from '../pokemonlist.service';
 export class PokemoncardPage implements OnInit {
   pokemonList: Pokemon[];
 
-  constructor(private pokemonListService: PokemonlistService) { 
+  constructor(private pokemonListService: PokemonlistService) {
     this.initializePokemonList();
   }
 
-  ngOnInit() {    
+  ngOnInit() {
   }
 
   initializePokemonList(): void {
-    this.pokemonList = this.pokemonListService.getPokemonList();
+    this.pokemonListService.content.subscribe((data) => {
+      this.pokemonList = data;
+    });
   }
 
 }

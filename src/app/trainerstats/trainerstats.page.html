@@ -9,5 +9,18 @@
 
 <ion-content [fullscreen]="true">
   <div id="container">
+    <ion-row>
+      <div class="trainerstats-profile">
+        <img src="assets/images/ash.png" />
+        <h5>Ash Ketchum</h5>
+      </div>
+    </ion-row>
+    <div class="boxScore">
+      <p>My Pokemon Army 😀</p>
+      <p>Win cardgame with 10 points or above</p>
+    </div>
+    <ion-row class="trainerstats-army">
+      <div *ngFor="let pokemon of myPokemonList"><img src="{{pokemon.img}}" /></div>
+    </ion-row>
   </div>
 </ion-content>

@@ -16,10 +16,6 @@ const routes: Routes = [
     loadChildren: () => import('./cardsgame/cardsgame.module').then( m => m.CardsgamePageModule)
   },
   {
-    path: 'pokemonstats',
-    loadChildren: () => import('./pokemonstats/pokemonstats.module').then( m => m.PokemonstatsPageModule)
-  },
-  {
     path: 'trainerstats',
     loadChildren: () => import('./trainerstats/trainerstats.module').then( m => m.TrainerstatsPageModule)
   }
