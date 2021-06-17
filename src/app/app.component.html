@@ -3,7 +3,8 @@
     <ion-content>
       <ion-list id="inbox-list">
         <ion-list-header>Trainer</ion-list-header>
-        <ion-note>Ash Ketchum</ion-note>
+        <ion-note>Ash Ketchum</ion-note><br>
+        <img class="hamburger-img" src="assets/images/ash.png" />
 
         <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages; let i = index">
           <ion-item (click)="goToPage(i)"
@@ -12,7 +13,10 @@
           </ion-item>
         </ion-menu-toggle>
       </ion-list>
-
+      <div>
+        <p>Credits:</p>
+        <a>https://pokemondb.net/sprites</a>
+      </div>
     </ion-content>
   </ion-menu>
   <ion-router-outlet id="main-content"></ion-router-outlet>

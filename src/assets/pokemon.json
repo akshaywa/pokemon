@@ -3,8 +3,8 @@
         {
             "name": "Bulbasaur",
             "power": "45",
-            "attack": "49",
-            "defence": "49",
+            "attack": "54",
+            "defence": "54",
             "speed": "45",
             "type": "Grass/Poison",
             "img": "assets/images/bulbasaur.jpg"
@@ -59,7 +59,7 @@
             "power": "60",
             "attack": "45",
             "defence": "50",
-            "speed": "70",
+            "speed": "74",
             "type": "Bug/Flying",
             "img": "assets/images/butterfree.jpg"
         },
@@ -75,7 +75,7 @@
         {
             "name": "Pidgeotto",
             "power": "63",
-            "attack": "60",
+            "attack": "64",
             "defence": "55",
             "speed": "71",
             "type": "Normal/Flying",
@@ -110,7 +110,7 @@
         },
         {
             "name": "Arbok",
-            "power": "60",
+            "power": "64",
             "attack": "95",
             "defence": "69",
             "speed": "80",
@@ -137,7 +137,7 @@
         },
         {
             "name": "Clefairy",
-            "power": "70",
+            "power": "73",
             "attack": "45",
             "defence": "48",
             "speed": "35",
@@ -157,8 +157,8 @@
             "name": "Jigglypuff",
             "power": "115",
             "attack": "45",
-            "defence": "20",
-            "speed": "20",
+            "defence": "24",
+            "speed": "24",
             "type": "Normal/Fairy",
             "img": "assets/images/jigglypuff.jpg"
         },
@@ -166,7 +166,7 @@
             "name": "Gloom",
             "power": "60",
             "attack": "65",
-            "defence": "70",
+            "defence": "74",
             "speed": "40",
             "type": "Grass/Poison",
             "img": "assets/images/gloom.jpg"
@@ -174,7 +174,7 @@
         {
             "name": "Paras",
             "power": "35",
-            "attack": "70",
+            "attack": "73",
             "defence": "55",
             "speed": "25",
             "type": "Bug/Grass",
@@ -185,7 +185,7 @@
             "power": "35",
             "attack": "100",
             "defence": "50",
-            "speed": "120",
+            "speed": "124",
             "type": "Ground",
             "img": "assets/images/dugtrio.jpg"
         },
@@ -212,7 +212,7 @@
             "power": "55",
             "attack": "70",
             "defence": "45",
-            "speed": "60",
+            "speed": "64",
             "type": "Fire",
             "img": "assets/images/growlithe.jpg"
         },
@@ -248,7 +248,7 @@
             "power": "50",
             "attack": "75",
             "defence": "35",
-            "speed": "40",
+            "speed": "42",
             "type": "Grass/Poison",
             "img": "assets/images/bellsprout.jpg"
         },
@@ -263,9 +263,9 @@
         },
         {
             "name": "Geodude",
-            "power": "40",
+            "power": "42",
             "attack": "80",
-            "defence": "100",
+            "defence": "103",
             "speed": "20",
             "type": "Rock/Ground",
             "img": "assets/images/geodude.jpg"
@@ -273,8 +273,8 @@
         {
             "name": "Rapidash",
             "power": "65",
-            "attack": "100",
-            "defence": "70",
+            "attack": "103",
+            "defence": "74",
             "speed": "105",
             "type": "Fire",
             "img": "assets/images/rapidash.jpg"
@@ -302,7 +302,7 @@
             "power": "60",
             "attack": "65",
             "defence": "60",
-            "speed": "110",
+            "speed": "112",
             "type": "Ghost/Poison",
             "img": "assets/images/gengar.jpg"
         },
@@ -310,8 +310,8 @@
             "name": "Onix",
             "power": "35",
             "attack": "45",
-            "defence": "160",
-            "speed": "70",
+            "defence": "164",
+            "speed": "74",
             "type": "Rock/Ground",
             "img": "assets/images/onix.jpg"
         },
@@ -344,7 +344,7 @@
         },
         {
             "name": "Voltorb",
-            "power": "40",
+            "power": "42",
             "attack": "30",
             "defence": "50",
             "speed": "100",
@@ -353,7 +353,7 @@
         },
         {
             "name": "Exeggutor",
-            "power": "95",
+            "power": "98",
             "attack": "95",
             "defence": "85",
             "speed": "55",
@@ -400,7 +400,7 @@
             "name": "Goldeen",
             "power": "45",
             "attack": "67",
-            "defence": "60",
+            "defence": "64",
             "speed": "63",
             "type": "Water",
             "img": "assets/images/goldeen.jpg"
@@ -419,13 +419,13 @@
             "power": "60",
             "attack": "75",
             "defence": "85",
-            "speed": "115",
+            "speed": "119",
             "type": "Water/Psychic",
             "img": "assets/images/starmie.jpg"
         },
         {
             "name": "Mr-mime",
-            "power": "40",
+            "power": "42",
             "attack": "45",
             "defence": "65",
             "speed": "90",
@@ -435,7 +435,7 @@
         {
             "name": "Scyther",
             "power": "70",
-            "attack": "110",
+            "attack": "112",
             "defence": "80",
             "speed": "105",
             "type": "Bug/Flying",
@@ -453,7 +453,7 @@
         {
             "name": "Magmar",
             "power": "65",
-            "attack": "95",
+            "attack": "98",
             "defence": "57",
             "speed": "93",
             "type": "Fire",
@@ -524,7 +524,7 @@
         },
         {
             "name": "Bayleef",
-            "power": "60",
+            "power": "64",
             "attack": "62",
             "defence": "80",
             "speed": "80",
@@ -542,7 +542,7 @@
         },
         {
             "name": "Hoothoot",
-            "power": "60",
+            "power": "64",
             "attack": "30",
             "defence": "30",
             "speed": "50",
@@ -553,7 +553,7 @@
             "name": "bellossom",
             "power": "75",
             "attack": "80",
-            "defence": "95",
+            "defence": "98",
             "speed": "50",
             "type": "Grass",
             "img": "assets/images/bellossom.jpg"
@@ -563,7 +563,7 @@
             "power": "190",
             "attack": "33", 
             "defence": "58",
-            "speed": "33",
+            "speed": "37",
             "type": "Psychic",
             "img": "assets/images/wobbuffet.jpg"
         }
