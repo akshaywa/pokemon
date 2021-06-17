@@ -32,7 +32,7 @@
     height: 11%;
     background-color: #262626;
     color: #fff;
-    padding: 10px;
+    padding: 8px;
     position: absolute;
     top: 18.5%;
     left: 2%;
@@ -118,6 +118,8 @@ ion-card-header {
     border-bottom: 1px solid black;
     padding: 3% !important;
     height: 35%;
+    color: black;
+    font-size: 98%;
 }
 
 ion-card-content {    
@@ -131,3 +133,22 @@ ion-card-content {
     height: 100%;
 }
 
+ion-title {
+    color: #fff;
+}
+
+ion-buttons {
+    color: #fff;
+}
+
+.title {
+    margin: 2%
+}
+
+ion-spinner {
+    color:red;
+    transform: scale(1.4);
+    position: fixed;
+    left: 49%;
+    top: 25%;
+}

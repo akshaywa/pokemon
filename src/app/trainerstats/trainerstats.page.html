@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Trainer Stats</ion-title>
+    <ion-title>Trainer Stats <img class="header-img" src="assets/images/pokemon.png" /></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,16 +11,18 @@
   <div id="container">
     <ion-row>
       <div class="trainerstats-profile">
-        <img src="assets/images/ash.png" />
+        <img class="trainerstats-img" src="assets/images/ash.png" />
         <h5>Ash Ketchum</h5>
       </div>
     </ion-row>
-    <div class="boxScore">
-      <p>My Pokemon Army 😀</p>
-      <p>Win cardgame with 10 points or above</p>
+    <div class="allbox">
+      <div class="boxScore">
+        <p>My Pokemon Army 😀</p>
+        <p>Win cardgame with 10 points or above</p>
+      </div>
+      <div class="trainerstats-army">
+        <div *ngFor="let pokemon of myPokemonList"><img class="trainerstats-img" src="{{pokemon}}" /></div>
+      </div>
     </div>
-    <ion-row class="trainerstats-army">
-      <div *ngFor="let pokemon of myPokemonList"><img src="{{pokemon.img}}" /></div>
-    </ion-row>
   </div>
 </ion-content>

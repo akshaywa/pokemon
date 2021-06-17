@@ -3,7 +3,7 @@ ion-card {
     box-shadow: 1.8px 2px 2.4px #888888;
 }
 
-img {
+.pokemoncard-img {
     display: block;
     margin: auto;
     height: 93px;
@@ -24,13 +24,28 @@ ion-card-subtitle {
 
 ion-card-header {
     border-bottom: 1px solid black;
-    padding: 3%;
+    padding: 3%;    
+    color: black;
+    font-size: 98%;
 }
 
 ion-card-content {    
     color: black;
+    font-size: 88%;
 }
 
 .pokemoncard-card {
     border: 1px solid black;
+}
+
+ion-title {
+    color: #fff;
+}
+
+ion-buttons {
+    color: #fff;
+}
+
+.title {
+    margin: 3%
 }

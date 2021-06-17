@@ -1,9 +1,10 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { AlertController } from '@ionic/angular';
 import { CardStack } from '../dto/cardstack';
 import { CardYou } from '../dto/cardyou';
 import { Pokemon } from '../dto/pokemon';
 import { PokemonlistService } from '../pokemonlist.service';
+import { SQLite, SQLiteObject } from '@ionic-native/sqlite/ngx';
 
 @Component({
   selector: 'app-cardsgame',
@@ -31,23 +32,53 @@ export class CardsgamePage implements OnInit {
   aiScore: number = 0;
   whoWon: string = null;
 
-  constructor(private pokemonListService: PokemonlistService,
-    private alertController: AlertController) {
-    this.createCardStack();
-    this.createCardStackYou();
+  private database: SQLiteObject;
+  showSpinner: boolean = true;
+
+
+  constructor(public pokemonListService: PokemonlistService,
+    private alertController: AlertController,
+    private sqlite: SQLite) {
   }
 
   ngOnInit() {
+    this.createCardStack();
+    this.createCardStackYou();
   }
 
   async initializePokemonList() {
     await this.pokemonListService.getPokemonListFromApi().then((pokemonList: Pokemon[]) => {
       this.pokemonList = pokemonList;
       this.pokemonListService.content.next(this.pokemonList);
+      this.initializeSqlStorage(pokemonList);
     }).catch(() => {
       console.log("json not fetched");
     });
   }
+
+  initializeSqlStorage(pokemonList: Pokemon[]): void {
+    this.sqlite.create({
+      name: 'pokemondb.db',
+      location: 'default'
+    }).then((db: SQLiteObject) => {
+      this.database = db;
+      db.executeSql(`create table if not exists pokemonTable(name VARCHAR(32), image VARCHAR(64))`, [])
+        .then(() => {
+          db.executeSql(`SELECT * FROM pokemonTable`, [])
+            .then((r) => {
+              if (r.rows.length == 0) {
+                db.executeSql(`INSERT INTO pokemonTable VALUES('${this.pokemonList[13].name}','${this.pokemonList[13].img}')`, [])
+                  .then(() => console.log("insert"))
+                  .catch(e => console.log("insert error: " + e))
+              }
+            })
+            .catch(e => console.log("create table error: " + e));
+        })
+        .catch(e => console.log("create db error: " + e));
+    })
+      .catch(e => console.log("create db error: " + e));
+  }
+
 
   createCardStack(): void {
     while (this.cardInStack < 12) {
@@ -58,7 +89,7 @@ export class CardsgamePage implements OnInit {
   }
 
   async createCardStackYou() {
-      await this.initializePokemonList();
+    await this.initializePokemonList();
     while (this.cardInYou < 12) {
       let randomCard = this.pokemonList[Math.floor(Math.random() * this.pokemonList.length)];
       this.cardYou.push(new CardYou(randomCard, this.newValYou));
@@ -67,8 +98,11 @@ export class CardsgamePage implements OnInit {
     }
   }
 
-  startGame(): void {
+  startGame(): void {    
     this.startCardGame = true;
+    setTimeout(() => {
+      this.showSpinner = false;
+    },1600)
   }
 
   async compareCard(skill: string) {
@@ -147,19 +181,33 @@ export class CardsgamePage implements OnInit {
   async askToPlayAgain() {
     let whowon;
     if (this.yourScore > this.aiScore) {
-      whowon = 'You Won the Round';
+      whowon = 'You Won the Round';      
+      var radomPokemon = null;
+      if (this.yourScore >= 10) {
+        whowon = 'You Won the Round and';        
+        radomPokemon = Math.floor(Math.random() * this.pokemonList.length);
+      }
     } else if (this.yourScore < this.aiScore) {
-      whowon = 'Opponent Won the Round';
+      whowon = 'Opponent Won the Round';      
+      radomPokemon = null;
     } else {
       whowon = 'Match Drawn for the Round';
+      radomPokemon = null;
     }
 
-    const alert = await this.alertController.create({
+    if(radomPokemon == null){
+      const alert = await this.alertController.create({
       header: whowon,
       buttons: [
         {
-          text: 'Start new game with new cards',
+          text: 'Start new game with new cards',          
           handler: () => {
+            this.showSpinner = true;
+            if (this.yourScore >= 10) {
+              this.database.executeSql(`INSERT INTO pokemonTable VALUES('${this.pokemonList[radomPokemon].name}','${this.pokemonList[radomPokemon].img}')`, [])
+                .then(() => whowon = 'You Won the Round and POKEMON')
+                .catch(e => console.log("insert error: " + e));
+            }
             this.cardInStack = 0;
             this.cardInYou = 0;
             this.newVal = 0;
@@ -168,11 +216,46 @@ export class CardsgamePage implements OnInit {
             this.aiScore = 0;
             this.createCardStack();
             this.createCardStackYou();
+            setTimeout(() => {
+              this.showSpinner = false;
+            },1500)
           }
         }
       ],
       backdropDismiss: false
     });
     await alert.present();
+
+    } else {const alert = await this.alertController.create({
+      header: whowon,
+      message: `<img src="${this.pokemonList[radomPokemon].img}"/>`,
+      buttons: [
+        {
+          text: 'Start new game with new cards',          
+          handler: () => {
+            this.showSpinner = true;
+            if (this.yourScore >= 10) {
+              this.database.executeSql(`INSERT INTO pokemonTable VALUES('${this.pokemonList[radomPokemon].name}','${this.pokemonList[radomPokemon].img}')`, [])
+                .then(() => whowon = 'You Won the Round and POKEMON')
+                .catch(e => console.log("insert error: " + e));
+            }
+            this.cardInStack = 0;
+            this.cardInYou = 0;
+            this.newVal = 0;
+            this.newValYou = 0;
+            this.yourScore = 0;
+            this.aiScore = 0;
+            this.createCardStack();
+            this.createCardStackYou();
+            setTimeout(() => {
+              this.showSpinner = false;
+            },1500)
+          }
+        }
+      ],
+      backdropDismiss: false
+    });
+    await alert.present();
+    }    
   }
 }

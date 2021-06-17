@@ -1,9 +1,9 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="danger">
     <ion-buttons slot="start">
       <ion-menu-button></ion-menu-button>
     </ion-buttons>
-    <ion-title>Cards Game</ion-title>
+    <ion-title>Cards Game <img class="header-img" src="assets/images/pokemon.png" /></ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -22,59 +22,64 @@
     </div>
 
     <div *ngIf="startCardGame">
-      <div *ngIf="yourScore==0 && aiScore==0" class="boxtwo arrow-bottom">
-        Select Stats to Bet
+      <div *ngIf="!showSpinner">
+        <div *ngIf="yourScore==0 && aiScore==0" class="boxtwo arrow-bottom">
+          Select Stats (Power,Attack,Def,Speed) to Bet
+        </div>
+
+        <div class="boxScore">
+          <table>
+            <tr>
+              <td>YOUR&ensp;</td>
+              <td>OPPONENT</td>
+            </tr>
+            <tr>
+              <td>SCORE&ensp;</td>
+              <td>SCORE</td>
+            </tr>
+            <tr>
+              <td>{{yourScore}}&ensp;</td>
+              <td>{{aiScore}}</td>
+            </tr>
+          </table>
+        </div>
+
+        <div *ngFor="let singleCard of cardYou">
+          <ion-card class="cardgame-cardafteryou"
+            [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
+            <img class="cardgame-youimage" src={{singleCard.pokemon.img}} />
+            <div class="cardgame-card"
+              [ngStyle]="{'background-color': pokemonListService.randomCardColor(singleCard.pokemon.type)}">
+              <ion-card-header>
+                <div class="title"><strong>{{singleCard.pokemon.name}}</strong></div>
+                <div [ngStyle]="{'background-color': pokemonListService.changeTypeColor(singleCard.pokemon.type)}">
+                  <strong>
+                    {{singleCard.pokemon.type}}
+                  </strong>
+                </div>
+              </ion-card-header>
+              <ion-card-content>
+                <ion-row>
+                  <ion-col (click)="compareCard('power')"><strong>Power:</strong>&ensp;{{singleCard.pokemon.power}}
+                  </ion-col>
+                  <ion-col (click)="compareCard('attack')"><strong>Attack:</strong>&ensp;{{singleCard.pokemon.attack}}
+                  </ion-col>
+                </ion-row>
+                <ion-row>
+                  <ion-col (click)="compareCard('defence')">
+                    <strong>Defence:</strong>&ensp;{{singleCard.pokemon.defence}}
+                  </ion-col>
+                  <ion-col (click)="compareCard('speed')"><strong>Speed:</strong>&ensp;{{singleCard.pokemon.speed}}
+                  </ion-col>
+                </ion-row>
+              </ion-card-content>
+            </div>
+          </ion-card>
+        </div>
       </div>
 
-      <div class="boxScore">
-        <table>
-          <tr>
-            <td>YOUR&ensp;</td>
-            <td>OPPONENT</td>
-          </tr>
-          <tr>
-            <td>SCORE&ensp;</td>
-            <td>SCORE</td>
-          </tr>
-          <tr>
-            <td>{{yourScore}}&ensp;</td>
-            <td>{{aiScore}}</td>
-          </tr>
-        </table>
-      </div>
 
-      <div *ngFor="let singleCard of cardYou">
-        <ion-card class="cardgame-cardafteryou"
-          [ngStyle]="{'transform': 'translate(' + singleCard.newVal + 'px,' + singleCard.newVal + 'px)'}">
-          <img class="cardgame-youimage" src={{singleCard.pokemon.img}} />
-          <div class="cardgame-card"
-            [ngStyle]="{'background-color': pokemonListService.randomCardColor(singleCard.pokemon.type)}">
-            <ion-card-header>
-              <ion-card-title><strong>{{singleCard.pokemon.name}}</strong></ion-card-title>
-              <ion-card-subtitle
-                [ngStyle]="{'background-color': pokemonListService.changeTypeColor(singleCard.pokemon.type)}">
-                <strong>
-                  {{singleCard.pokemon.type}}
-                </strong>
-              </ion-card-subtitle>
-            </ion-card-header>
-            <ion-card-content>
-              <ion-row>
-                <ion-col (click)="compareCard('power')"><strong>Power:</strong>&ensp;{{singleCard.pokemon.power}}
-                </ion-col>
-                <ion-col (click)="compareCard('attack')"><strong>Attack:</strong>&ensp;{{singleCard.pokemon.attack}}
-                </ion-col>
-              </ion-row>
-              <ion-row>
-                <ion-col (click)="compareCard('defence')"><strong>Defence:</strong>&ensp;{{singleCard.pokemon.defence}}
-                </ion-col>
-                <ion-col (click)="compareCard('speed')"><strong>Speed:</strong>&ensp;{{singleCard.pokemon.speed}}
-                </ion-col>
-              </ion-row>
-            </ion-card-content>
-          </div>
-        </ion-card>
-      </div>
+      <ion-spinner *ngIf="showSpinner" name="crescent"></ion-spinner>
 
 
       <div *ngIf="!cardPresentAI">
@@ -92,12 +97,12 @@
             <div class="cardgame-card"
               [ngStyle]="{'background-color': pokemonListService.randomCardColor(cardAI.type)}">
               <ion-card-header>
-                <ion-card-title><strong>{{cardAI.name}}</strong></ion-card-title>
-                <ion-card-subtitle [ngStyle]="{'background-color': pokemonListService.changeTypeColor(cardAI.type)}">
+                <div class="title"><strong>{{cardAI.name}}</strong></div>
+                <div [ngStyle]="{'background-color': pokemonListService.changeTypeColor(cardAI.type)}">
                   <strong>
                     {{cardAI.type}}
                   </strong>
-                </ion-card-subtitle>
+                </div>
               </ion-card-header>
               <ion-card-content>
                 <ion-row>
