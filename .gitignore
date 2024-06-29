@@ -1,31 +1,29 @@
-# Specifies intentionally untracked files to ignore when using Git
-# http://git-scm.com/docs/gitignore
+# Node artifacts
+node_modules/
 
-*~
-*.sw[mnpcod]
-.tmp
-*.tmp
-*.tmp.*
-*.sublime-project
-*.sublime-workspace
-.DS_Store
-Thumbs.db
-UserInterfaceState.xcuserstate
-$RECYCLE.BIN/
+# Compiled output
+/dist/
+/tmp/
+/out-tsc/
 
+# IDE/editor files
+.idea/
+.vscode/
+*.swp
+
+# Logs and databases
 *.log
-log.txt
-npm-debug.log*
+*.sqlite
 
-/.idea
-/.ionic
-/.sass-cache
-/.sourcemaps
-/.versions
-/.vscode
-/coverage
-/dist
-/node_modules
-/platforms
-/plugins
-/www
+# Environment variables
+.env
+
+# Angular specific files
+/.angular.json
+/angular-cli.json
+*.ngc
+*.ngfactory.ts
+*.ngsummary.json
+
+# Tests
+/*.spec.ts
